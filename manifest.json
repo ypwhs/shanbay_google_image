@@ -1,0 +1,16 @@
+{
+    "name": "扇贝单词图片助手",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "扇贝单词自动搜索单词相关图片。",
+    "icons": { "128": "16.png"},
+    "permissions": ["webRequest", "webRequestBlocking", "http://*.google.com/", "https://*.google.com/", "https://www.shanbay.com/"],
+    "background": {
+      "scripts": [ "background.js" ]
+   },
+    "content_scripts": [
+    {
+      "matches": ["https://www.shanbay.com/*"],
+      "js": ["jquery.js", "myscrypt.js"]
+    }]
+}
