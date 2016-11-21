@@ -9,9 +9,11 @@ function reviewContentChange(mutations) {
     var span = $("div.offset1")[0];
     if(word && word.textContent != currentWord){
         currentWord = word.textContent;
+        if($(word).find('small')[0]){
+	       	currentWord = currentWord.replace($(word).find('small')[0].textContent, '');
+	    }
         $("div#review").css("width", "1200px");
-        $("div#answer").append("<br><iframe src=\"https://www.google.com/search?tbm=isch&q=" + currentWord + "\" style=\"width: 1100px; height:330px;\" />");
-
+        $("div#answer").append("<br><iframe src=\"https://www.google.com/search?tbm=isch&output=embed&q=" + currentWord + "\" style=\"width: 1100px; height:330px;\" />");
         console.debug(currentWord);
     }
 }
